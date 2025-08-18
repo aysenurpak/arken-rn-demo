@@ -6,19 +6,25 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   SafeAreaProvider,
+  SafeAreaView,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import styles from "./styles/HomeScreenStyles"
+import Card from './components/Card';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <StatusBar barStyle={'dark-content'} />
+
+      <SafeAreaView  style={styles.container}>
+        <Card title={"Arken Yazılım"} description={"ToDo List Description"}>
+          <Text>This is the inner content of the card.</Text>
+        </Card>
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }
@@ -35,11 +41,5 @@ function AppContent() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
