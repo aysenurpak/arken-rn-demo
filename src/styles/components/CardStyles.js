@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
+import COLORS from "../../constants/color";
+import SIZES from "../../constants/theme";
 
 export default StyleSheet.create({
     container: {
         width: '90%',
-        height: 200,
+        overflow: 'hidden',
         backgroundColor: 'white',
         borderRadius: 20,
         shadowColor: 'black',
@@ -22,7 +24,10 @@ export default StyleSheet.create({
     description: {
         color: 'gray',
         fontSize: 16,
-        marginTop: 10,
+        marginTop: SIZES.small,
         marginBottom: 40,
+    },
+    text: {
+        color: COLORS.green
     }
 });
