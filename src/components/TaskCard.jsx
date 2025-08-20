@@ -1,9 +1,9 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from '../styles/components/TaskCardStyles';
-import { Banana, Check, CheckIcon, Loader2Icon, XIcon } from 'lucide-react-native';
+import { Banana, Check, CheckIcon, CircleAlertIcon, Loader2Icon, SquarePen, Trash2, XIcon } from 'lucide-react-native';
 import COLORS from '../constants/color';
 
-const TaskCard = ({ task, theme = "default", onPress, danger = false }) => {
+const TaskCard = ({ task, theme = "default", onPress, danger = false, onEdit , onDelete  }) => {
     return (
         <TouchableOpacity 
         style={[styles.container, styles[`theme${theme}`]]} 
@@ -27,9 +27,18 @@ const TaskCard = ({ task, theme = "default", onPress, danger = false }) => {
                 {task}
             </Text>
 
+            <View style={styles.actionIconsContainer}>
+                <TouchableOpacity onPress={onEdit} style={styles.actionIcon}>
+                    <SquarePen color={COLORS.gray} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={onDelete} style={styles.actionIcon}>
+                    <Trash2 color={COLORS.gray} />
+                </TouchableOpacity>
+            </View>
+
             {danger && (
                 <View style={styles.dangerIconContainer}>
-                    <Banana color={COLORS.red} style={styles.dangerIcon} />
+                    <CircleAlertIcon color={COLORS.background} style={styles.dangerIcon} />
                 </View>
             )}
         </TouchableOpacity>

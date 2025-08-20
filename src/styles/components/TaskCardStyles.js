@@ -46,6 +46,7 @@ export default StyleSheet.create({
         color: "black",
         fontSize: SIZE.medium,
         fontWeight: "500",
+        flex: 1,
     },
     textwaiting: {
         color: COLORS.yellow,
@@ -60,7 +61,21 @@ export default StyleSheet.create({
         fontWeight: "normal",
     },
     dangerIconContainer: {
-        position: "absolute",
-        right: SIZE.medium,
-    }
+        width: SIZE.xxLarge,
+        height: SIZE.xxLarge,
+        borderRadius: SIZE.xSmall,
+        alignItems: "center",
+        justifyContent: "center",
+        right: SIZE.xSmall,
+        backgroundColor: COLORS.red,
+        
+      },
+      actionIconsContainer: {
+        flexDirection: "row",
+        alignItems: "flex-start",
+        marginLeft: 8,
+      }
+      
+    
+      
 });
