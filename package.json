@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native/new-app-screen": "0.81.0",
+    "axios": "^1.11.0",
     "lucide-react-native": "^0.540.0",
     "react": "19.1.0",
     "react-native": "0.81.0",

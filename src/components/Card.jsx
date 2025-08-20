@@ -27,9 +27,9 @@ const Card = ({ title, description, children }) => {
             <Text style={styles.description}>{description}</Text>
         </View>
 
-        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, gap: SIZE.medium }} style={styles.content}>
+        <View style={styles.content}>
             {children}
-        </ScrollView>
+        </View>
     </View>
   );
 };

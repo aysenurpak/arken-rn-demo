@@ -3,6 +3,19 @@ import SIZE from "../../constants/theme";
 import COLORS from "../../constants/color";
 
 const styles = StyleSheet.create({
+  modalContainer: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  input: {
+    width: '100%',
+    backgroundColor: COLORS.grayTransparent,
+    borderRadius: SIZE.small,
+    paddingVertical: SIZE.medium,
+    paddingHorizontal: SIZE.medium,
+  },
   container: {
     flex: 1,
     justifyContent: 'space-between',
@@ -10,6 +23,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
   section: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingBottom: SIZE.small,
     borderBottomWidth: 1,
     borderColor: COLORS.grayTransparent

@@ -42,6 +42,7 @@ export default StyleSheet.create({
         backgroundColor: COLORS.green,
     },
     text: {
+        maxWidth: '85%',
         color: "black",
         fontSize: SIZE.medium,
         fontWeight: "500",
@@ -58,4 +59,8 @@ export default StyleSheet.create({
         color: COLORS.green,
         fontWeight: "normal",
     },
+    dangerIconContainer: {
+        position: "absolute",
+        right: SIZE.medium,
+    }
 });
