@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     flex: 1,
     justifyContent: 'center',
+  },
+  modalContent: {
+    justifyContent: 'center',
     alignItems: 'center',
   },
   input: {
@@ -53,7 +56,11 @@ const styles = StyleSheet.create({
   image: {
     width: 500,
     height: 200,
-  }
+  },
+  closeButtonContainer: {
+    position: 'absolute',
+},
 });
+
 
 export default styles;

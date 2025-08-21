@@ -1,11 +1,11 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, Touchable, TouchableOpacity, View } from "react-native";
 
 import styles from "../styles/components/CardStyles";
 import { useEffect, useState } from "react";
-import { Star } from "lucide-react-native";
+import { Star, X } from "lucide-react-native";
 import SIZE from "../constants/theme";
 
-const Card = ({ title, description, children }) => {
+const Card = ({ title, description, onClose = null, children }) => {
   const [data, setData] = useState("Loading...");
 
   useEffect(() => {
@@ -22,6 +22,11 @@ const Card = ({ title, description, children }) => {
 
   return (
     <View style={styles.container}> 
+    {onClose &&
+      (<TouchableOpacity style={styles.closeButtonContainer} onPress={onClose}>
+       <X/>
+    </TouchableOpacity>)}
+    
         <View style={styles.header}>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.description}>{description}</Text>

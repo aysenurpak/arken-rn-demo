@@ -74,8 +74,34 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "flex-start",
         marginLeft: 8,
+      },
+      XIconContainer: {
+        width: SIZE.xxLarge,
+        height: SIZE.xxLarge,
+        borderRadius: SIZE.xSmall,
+        alignItems: "center",
+        justifyContent: "center",
+        right: SIZE.xSmall,
+      },
+      subTaskContainer: {
+        paddingLeft: SIZE.large,
+        marginTop: SIZE.xSmall,
+        gap: SIZE.xSmall, 
+        
+      },
+      subTaskIconContainer: {
+        width: SIZE.xxLarge,
+        height: SIZE.xxLarge,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: SIZE.xSmall,
+        backgroundColor: COLORS.grayTransparent, 
+      },
+      subTaskText: {
+        flex: 1,
+        fontSize: SIZE.small,
+        color: COLORS.black,
       }
       
     
-      
-});
+    });

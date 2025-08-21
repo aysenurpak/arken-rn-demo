@@ -13,7 +13,15 @@ export default StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,
         shadowRadius: 4,
-        padding: 20,
+        padding: SIZES.large,
+    },
+    closeButtonContainer: {
+        position: 'absolute',
+        top: SIZES.large,
+        right: SIZES.large,
+        zIndex: 1,
+        justifyContent: 'center',
+        alignContent: 'center',
     },
     innerContent: {
     },
