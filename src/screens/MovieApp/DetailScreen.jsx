@@ -57,72 +57,66 @@ const DetailScreen = () => {
                 resizeMode="cover"
             />
 
-            <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 12 }}>
-                <Text style={{ color: COLORS.background, fontSize: 27, fontWeight: "bold" }}>
-                    {movieDetails?.title}
-                </Text>
+            <View style={{ paddingHorizontal: SIZE.medium }}>
+                <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 12}}>
+                    <Text style={{ color: COLORS.background, fontSize: 27, fontWeight: "bold" }}>
+                        {movieDetails?.title}
+                    </Text>
 
-                <View style={[styles.container, styles.badgeContainer, { marginLeft: SIZE.xSmall }]}>
-                    <Text style={{ color: COLORS.background, fontWeight: "bold" }}>4K</Text>
-                </View>
-            </View>
-
-
-            <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 8 }}>
-                <Clock size={16} color={COLORS.background} style={{ marginRight: 4 }} />
-                <Text style={{ color: COLORS.background, marginRight: 16 }}>
-                    {formatRuntime(movieDetails?.runtime)}
-                </Text>
-
-                <Star size={16} color={COLORS.yellow} />
-                <Text style={{ color: COLORS.background, marginLeft: 4 }}>
-                    {movieDetails?.vote_average.toFixed(1)}
-                </Text>
-            </View>
-
-
-
-
-
-            <View style={{ padding: SIZE.medium }}>
-
-                <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Genre</Text>
-                <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 12 }}>
-                    {movieDetails?.genres.length > 0 && movieDetails?.genres.map((genre) => (
-                        <View key={genre.id} style={[styles.container, styles.genreContainer]}>
-                            <Text style={{ color: COLORS.background, fontWeight: "bold" }}>{genre.name}</Text>
-                        </View>
-                    ))}
-
+                    <View style={[styles.container, styles.badgeContainer, { marginLeft: SIZE.xSmall }]}>
+                        <Text style={{ color: COLORS.background, fontWeight: "bold" }}>4K</Text>
+                    </View>
                 </View>
 
 
+                <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 8 }}>
+                    <Clock size={16} color={COLORS.background} style={{ marginRight: 4 }} />
+                    <Text style={{ color: COLORS.background, marginRight: 16 }}>
+                        {formatRuntime(movieDetails?.runtime)}
+                    </Text>
 
+                    <Star size={16} color={COLORS.yellow} />
+                    <Text style={{ color: COLORS.background, marginLeft: 4 }}>
+                        {movieDetails?.vote_average.toFixed(1)}
+                    </Text>
+                </View>
 
+                <View style={{}}>
 
-
-                <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Synopsis</Text>
-                <Text style={{ color: COLORS.background, marginTop: SIZE.small }}>{movieDetails?.overview}</Text>
-
-
-                <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Production Companies</Text>
-
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: SIZE.small }}>
-                    {movieDetails?.production_companies
-                        ?.filter((c) => c.logo_path)
-                        .map((company) => (
-                            <View
-                                key={company.id}
-                                style={{ backgroundColor: COLORS.gray, borderRadius: SIZE.small, padding: 10, marginRight: 12, alignItems: "center", justifyContent: "center" }}>
-                                <Image
-                                    source={{ uri: `https://image.tmdb.org/t/p/w200${company.logo_path}` }}
-                                    style={{ width: 80, height: 40, resizeMode: "contain" }}
-                                />
+                    <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Genre</Text>
+                    <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 12 }}>
+                        {movieDetails?.genres.length > 0 && movieDetails?.genres.map((genre) => (
+                            <View key={genre.id} style={[styles.container, styles.genreContainer]}>
+                                <Text style={{ color: COLORS.background, fontWeight: "bold" }}>{genre.name}</Text>
                             </View>
                         ))}
-                </ScrollView>
+
+                    </View>
 
 
+                    <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Synopsis</Text>
+                    <Text style={{ color: COLORS.background, marginTop: SIZE.small }}>{movieDetails?.overview}</Text>
+
+
+                    <Text style={{ color: COLORS.background, marginTop: SIZE.small, fontWeight: "bold" }}>Production Companies</Text>
+
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: SIZE.small }}>
+                        {movieDetails?.production_companies
+                            ?.filter((c) => c.logo_path)
+                            .map((company) => (
+                                <View
+                                    key={company.id}
+                                    style={{ backgroundColor: COLORS.gray, borderRadius: SIZE.small, paddingVertical: 10, marginRight: 12, alignItems: "center", justifyContent: "center" }}>
+                                    <Image
+                                        source={{ uri: `https://image.tmdb.org/t/p/w200${company.logo_path}` }}
+                                        style={{ width: 80, height: 40, resizeMode: "contain" }}
+                                    />
+                                </View>
+                            ))}
+                    </ScrollView>
+
+
+                </View>
             </View>
 
 
