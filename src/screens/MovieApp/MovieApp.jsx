@@ -7,6 +7,7 @@ import { StatusBar } from 'react-native';
 import { HomeIcon, Search } from 'lucide-react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DetailScreen from './DetailScreen';
+import useDemo from '../../hooks/useDemo';
 
 const Tab = createBottomTabNavigator();
 const TabStack = createNativeStackNavigator();
@@ -21,6 +22,8 @@ const MovieTabStack = () => {
 };
 
 const MovieApp = () => {
+    const {demoState} = useDemo();
+    console.log("Demo State from MovieApp:", demoState);
     return (
         <>
             <StatusBar barStyle="light-content"/>

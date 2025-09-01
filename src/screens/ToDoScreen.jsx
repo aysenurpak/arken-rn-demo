@@ -12,6 +12,7 @@ import SIZE from '../constants/theme';
 import { PlusSquare } from 'lucide-react-native';
 import COLORS from '../constants/color';
 import { useNavigation } from '@react-navigation/native';
+import useDemo from '../hooks/useDemo';
 
 function ToDoScreen() {
   const navigation = useNavigation();
@@ -23,6 +24,7 @@ function ToDoScreen() {
   const [subTaskModalVisible, setSubTaskModalVisible] = useState(false);
   const [currentTodoForSubTask, setCurrentTodoForSubTask] = useState(null);
   const [subTaskText, setSubTaskText] = useState("");
+  const {demoState, setDemoState} = useDemo();
 
   const nextStatus = (status) => {
     switch (status) {
@@ -262,6 +264,11 @@ function ToDoScreen() {
       </Modal>
 
       <SafeAreaView style={styles.container}>
+        <Pressable onPress={() => {
+          setDemoState(demoState === "demo" ? "updated demo" : "demo");
+        }}>
+          <Text>Demo State: {demoState}</Text>
+        </Pressable>
 
         <Button title='QR Okuyucuya git' onPress={() => {
           navigation.navigate('QRScanner');
