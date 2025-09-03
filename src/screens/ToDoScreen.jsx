@@ -25,8 +25,10 @@ function ToDoScreen() {
   const [subTaskModalVisible, setSubTaskModalVisible] = useState(false);
   const [currentTodoForSubTask, setCurrentTodoForSubTask] = useState(null);
   const [subTaskText, setSubTaskText] = useState("");
-  const { demoState, setDemoState, notifications } = useDemo();
+  const { demoState, setDemoState } = useDemo();
   const [notificationModalVisible, setNotificationModalVisible] = useState(false);
+  const {notifications} = useNotification();
+  const notificationCount = notifications.length;
 
 
   const nextStatus = (status) => {
@@ -114,6 +116,23 @@ function ToDoScreen() {
 
       }}>
         <Bell color={COLORS.gray} />
+        {notificationCount >= 0 && (
+            <View style={{
+              position: 'absolute',
+              top: 5,
+              right: 5,
+              backgroundColor: COLORS.background,
+              borderRadius: SIZE.small,
+              width: SIZE.large,
+              height: SIZE.large,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold' }}>
+                {notificationCount}
+              </Text>
+            </View>
+          )}
       </Pressable>
 
 
