@@ -14,6 +14,8 @@ import messaging, { firebase } from '@react-native-firebase/messaging';
 import { Alert } from "react-native";
 import { useEffect } from "react";
 import useNotification from "./hooks/useNotification";
+import ChatApp from "./screens/ChatApp/ChatApp";
+
 
 
 // Initialize Firebase before using any Firebase services
@@ -37,6 +39,7 @@ const App = () => {
           <Stack.Screen options={{headerShown: false}} name="C" component={CScreen} />
           <Stack.Screen options={{headerShown: false}} name="MovieApp" component={MovieApp} />
           <Stack.Screen options={{headerShown: false}} name="DetailScreen" component={DetailScreen} />
+          <Stack.Screen options={{headerShown: false}} name="ChatApp" component={ChatApp} />
         </Stack.Navigator>
       </NavigationContainer>
     </DemoProvider>

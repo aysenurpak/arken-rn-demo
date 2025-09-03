@@ -326,6 +326,13 @@ function ToDoScreen() {
         <Button title='Movie App' onPress={() => {
           navigation.navigate('MovieApp');
         }} />
+        <Button title='Chat App' onPress={() => {
+          navigation.navigate('ChatApp');
+        }} />
+
+
+
+
         <Card title={"Arken Yazılım"} description={"ToDo List Description"}>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Section/Context title</Text>
